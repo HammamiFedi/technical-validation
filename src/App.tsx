@@ -1,4 +1,5 @@
-import SideNav from "@/components/sidenav/sidenav";
+import { Container } from "@/components/container";
+import { SideNav } from "@/components/sidenav";
 
 function App() {
   return (
@@ -6,7 +7,11 @@ function App() {
       <div className="w-full flex-none border-b md:w-64 md:border-r">
         <SideNav />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">Children</div>
+      <div className="flex-grow bg-gray-100 p-6 md:overflow-y-auto md:p-12">
+        <Container title="Users" subtitle="Users Listing">
+          USers LIst
+        </Container>
+      </div>
     </div>
   );
 }
