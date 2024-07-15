@@ -1,5 +1,5 @@
-import { Container } from "@/components/container";
 import { SideNav } from "@/components/sidenav";
+import { UserDashboard } from "@/features/users/user-dashboard";
 
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
         <SideNav />
       </div>
       <div className="flex-grow bg-gray-100 p-6 md:overflow-y-auto md:p-12">
-        <Container title="Users" subtitle="Users Listing">
-          USers LIst
-        </Container>
+        <UserDashboard />
       </div>
     </div>
   );
