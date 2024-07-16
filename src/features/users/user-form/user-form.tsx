@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { UserDetailsFormProps } from "./user-form.type";
+import { UserDetailsFormProps } from "@/features/users/user-form/user-form.type";
 
 const UserDetailsForm = ({ user }: UserDetailsFormProps) => {
   return (

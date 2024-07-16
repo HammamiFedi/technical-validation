@@ -1,11 +1,12 @@
 import { toast } from "sonner";
+
 import useFetch from "@/hooks/useFetch";
 import { Container } from "@/components/container";
 import { ENDPOINTS } from "@/config/constants/endpoints";
 import { UserList } from "@/features/users/user-list";
 import { UserCardsSkeletonWrapper } from "@/features/users/user-cards-skeleton-wrapper";
 import { User } from "@/types/User";
-import { UserDialog } from "./user-dialog";
+import { UserDialog } from "@/features/users/user-dialog";
 import { useSearchStore } from "@/store/searchStore";
 
 const UserDashboard = () => {

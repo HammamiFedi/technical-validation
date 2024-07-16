@@ -1,5 +1,5 @@
 import { UserCard } from "@/features/users/user-card";
-import { UserListPtops } from "./user-list.type";
+import { UserListPtops } from "@/features/users/user-list/user-list.type";
 
 const UserList = ({ users }: UserListPtops) => {
   if (!users.length) {

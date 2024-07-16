@@ -1,6 +1,7 @@
+import { useState, useEffect, useRef } from "react";
+
 import { ENDPOINTS } from "@/config/constants/endpoints";
 import { buildApiUrl } from "@/lib/helpers";
-import { useState, useEffect, useRef } from "react";
 /**
  * Function to fetch data from an API by ID.
  * @param id

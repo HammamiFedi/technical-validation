@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+
 import {
   Dialog,
   DialogContent,
@@ -21,6 +22,7 @@ const UserDialog = () => {
   if (error) {
     toast.error(error);
   }
+
   return (
     <Dialog open={openUserDialog} onOpenChange={onOpenChange}>
       <DialogContent>
