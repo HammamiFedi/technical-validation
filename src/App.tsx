@@ -1,5 +1,7 @@
 import { SideNav } from "@/components/sidenav";
 import { UserDashboard } from "@/features/users/user-dashboard";
+import UserContextProvider from "@/context/user-context";
+import SearchContextProvider from "@/context/search-context";
 
 function App() {
   return (
@@ -8,7 +10,11 @@ function App() {
         <SideNav />
       </div>
       <div className="flex-grow bg-gray-100 p-6 md:overflow-y-auto md:p-12">
-        <UserDashboard />
+        <UserContextProvider>
+          <SearchContextProvider>
+            <UserDashboard />
+          </SearchContextProvider>
+        </UserContextProvider>
       </div>
     </div>
   );

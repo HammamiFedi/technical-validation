@@ -1,22 +1,14 @@
-import useFetch from "@/hooks/useFetch";
-import { User } from "@/types/User";
-import { ENDPOINTS } from "@/config/constants/endpoints";
 import { UserCard } from "@/features/users/user-card";
+import { UserListPtops } from "./user-list.type";
 
-const UserList = () => {
-  const { data, isFetching, error } = useFetch<User>(ENDPOINTS.USERS);
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  if (isFetching) {
-    return <p>Loading...</p>;
+const UserList = ({ users }: UserListPtops) => {
+  if (!users.length) {
+    return <div className="text-center">No users found</div>;
   }
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {data.map((user) => (
+      {users.map((user) => (
         <UserCard
           key={user.id}
           id={user.id}
