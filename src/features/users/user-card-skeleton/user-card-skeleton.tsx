@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const UserCardSkeleton = () => {
   return (
-    <Card className="group relative bg-gray-100 hover:bg-sky-100">
+    <Card className="group border-none shadow-none">
       <CardHeader className="flex flex-row gap-x-2">
         <Skeleton className="size-16 rounded-full" />
         <div className="space-y-2">

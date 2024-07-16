@@ -28,7 +28,7 @@ const UserDashboard = () => {
     <>
       <Container title="Users" subtitle="List, Search and Show users details">
         {searchText && (
-          <h1 className="my-4 ml-2 text-2xl">
+          <h1 className="my-4 ml-2 lg:text-2xl">
             Search results for: {searchText}
           </h1>
         )}

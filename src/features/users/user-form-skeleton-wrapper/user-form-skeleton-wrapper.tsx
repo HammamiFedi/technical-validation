@@ -6,7 +6,7 @@ const UserFormSkeletonWrapper = () => {
       {Array.from({ length: 8 }).map((_, index) => (
         <div key={index} className="space-y-3">
           <Skeleton className="h-2 w-16" />
-          <Skeleton className="h-8" />
+          <Skeleton className="h-12" />
         </div>
       ))}
     </div>

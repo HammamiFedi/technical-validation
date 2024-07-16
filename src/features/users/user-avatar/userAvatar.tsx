@@ -6,7 +6,7 @@ const UserAvatar = ({ name, imageSrc }: UserAvatarProps) => {
   return (
     <Avatar className="size-16">
       <AvatarImage src={imageSrc} alt={name} />
-      <AvatarFallback className="border border-violet-300 bg-violet-500 font-semibold text-white">
+      <AvatarFallback className="bg-gradient-to-r from-cyan-500 to-blue-500 font-semibold text-white">
         {getInitials(name)}
       </AvatarFallback>
     </Avatar>

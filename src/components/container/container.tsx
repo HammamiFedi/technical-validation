@@ -9,13 +9,13 @@ const Container = ({ title, subtitle, children }: ContainerProps) => {
   return (
     <div className="space-y-3">
       <GoBackButton />
-      <Card className="rounded-md shadow-md">
-        <CardHeader className="flex flex-col justify-start border-b border-gray-300 py-3 md:flex-row md:items-center md:justify-between">
+      <Card className="rounded-lg border-none">
+        <CardHeader className="flex flex-col justify-start gap-y-3 border-b border-gray-300 py-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1">
-            <h1 className="text-3xl font-bold tracking-wide text-indigo-600">
+            <h1 className="text-bg-linear text-3xl font-bold tracking-wide text-transparent">
               {title}
             </h1>
-            <p className="font-mono font-semibold text-gray-400">{subtitle}</p>
+            <p className="font-mono font-semibold text-cyan-500">{subtitle}</p>
           </div>
           <div>
             <Input
