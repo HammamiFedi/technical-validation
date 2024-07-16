@@ -2,10 +2,10 @@ import { GoBackButton } from "@/components/go-back-button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ContainerProps } from "@/components/container/container.type";
-import useSearchContext from "@/hooks/useSearchContext";
+import { useSearchStore } from "@/store/searchStore";
 
 const Container = ({ title, subtitle, children }: ContainerProps) => {
-  const { searchText, handleSearchChange } = useSearchContext();
+  const { searchText, handleSearchTextChange } = useSearchStore();
   return (
     <div className="space-y-3">
       <GoBackButton />
@@ -22,7 +22,7 @@ const Container = ({ title, subtitle, children }: ContainerProps) => {
               placeholder="Search..."
               type="text"
               value={searchText}
-              onChange={handleSearchChange}
+              onChange={(e) => handleSearchTextChange(e.target.value)}
             />
           </div>
         </CardHeader>

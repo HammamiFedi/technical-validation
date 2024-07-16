@@ -1,7 +1,11 @@
 import { ENDPOINTS } from "@/config/constants/endpoints";
 import { buildApiUrl } from "@/lib/helpers";
 import { useState, useEffect, useRef } from "react";
-
+/**
+ * Function to fetch data from an API by ID.
+ * @param id
+ * @returns The data, the loading state and the error message.
+ */
 export default function useFetchById<T>(id: number | null): {
   data: T | null;
   error: string | null;

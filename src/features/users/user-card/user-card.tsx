@@ -4,10 +4,10 @@ import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import { UserCardProps } from "@/features/users/user-card/user-card.type";
 import { UserAvatar } from "@/features/users/user-avatar";
 import { Button } from "@/components/ui/button";
-import useUserContext from "@/hooks/useUserContext";
+import { useUserStore } from "@/store/userStore";
 
 const UserCard = ({ name, username, id }: UserCardProps) => {
-  const { setUserId } = useUserContext();
+  const setUserId = useUserStore((state) => state.setUserId);
   return (
     <Card className="group relative bg-gray-100 hover:bg-sky-100">
       <CardHeader className="flex flex-row gap-x-2">

@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react";
 import { buildApiUrl } from "@/lib/helpers";
 
-export default function useFetch<T>(url: string) {
+/**
+ * Function to fetch data from an API.
+ * @param url
+ * @returns The data, the loading state and the error message.
+ */
+export default function useFetch<T>(url: string): {
+  data: T[];
+  isFetching: boolean;
+  error: string | null;
+} {
   const [data, setData] = useState<T[]>([]);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState<null | string>(null);

@@ -1,15 +1,17 @@
+import { toast } from "sonner";
 import useFetch from "@/hooks/useFetch";
 import { Container } from "@/components/container";
 import { ENDPOINTS } from "@/config/constants/endpoints";
 import { UserList } from "@/features/users/user-list";
 import { UserCardsSkeletonWrapper } from "@/features/users/user-cards-skeleton-wrapper";
 import { User } from "@/types/User";
-import useSearchContext from "@/hooks/useSearchContext";
+import { UserDialog } from "./user-dialog";
+import { useSearchStore } from "@/store/searchStore";
 
 const UserDashboard = () => {
-  const { data, isFetching } = useFetch<User>(ENDPOINTS.USERS);
+  const { data, isFetching, error } = useFetch<User>(ENDPOINTS.USERS);
 
-  const { searchText } = useSearchContext();
+  const { searchText } = useSearchStore();
 
   const filteredData = data.filter((user) => {
     const query = searchText.toLowerCase();
@@ -18,17 +20,26 @@ const UserDashboard = () => {
     return name || username;
   });
 
+  if (error) {
+    toast.error(error);
+  }
+
   return (
-    <Container title="Users" subtitle="List, Search and Show users details">
-      {searchText && (
-        <h1 className="my-4 ml-2 text-2xl">Search results for: {searchText}</h1>
-      )}
-      {isFetching ? (
-        <UserCardsSkeletonWrapper />
-      ) : (
-        <UserList users={filteredData} />
-      )}
-    </Container>
+    <>
+      <Container title="Users" subtitle="List, Search and Show users details">
+        {searchText && (
+          <h1 className="my-4 ml-2 text-2xl">
+            Search results for: {searchText}
+          </h1>
+        )}
+        {isFetching ? (
+          <UserCardsSkeletonWrapper />
+        ) : (
+          <UserList users={filteredData} />
+        )}
+      </Container>
+      <UserDialog />
+    </>
   );
 };
 
